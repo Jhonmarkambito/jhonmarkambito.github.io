@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Refined JM Logo Showcase</title>
+  <style>
+    body {
+      background: #060911;
+      color: #fff;
+      font-family: 'Outfit', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 50px 20px;
+      gap: 40px;
+    }
+    .hero-showcase {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 28px;
+      width: 100%;
+      max-width: 960px;
+    }
+    .card {
+      background: rgba(15, 23, 42, 0.7);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(12px);
+      border-radius: 20px;
+      padding: 30px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+    }
+    .card:hover {
+      border-color: rgba(245, 158, 11, 0.3);
+    }
+    .preview-canvas {
+      width: 130px;
+      height: 130px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: radial-gradient(circle at 50% 50%, rgba(245, 158, 11, 0.08) 0%, #0b1120 70%);
+      border-radius: 16px;
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      position: relative;
+    }
+    .nav-mockup {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 10px 18px;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 12px;
+    }
+    .badge-icon {
+      width: 38px;
+      height: 38px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 10px;
+      background: #0c1222;
+      border: 1px solid rgba(245, 158, 11, 0.3);
+      box-shadow: 0 0 15px rgba(245, 158, 11, 0.2);
+    }
+    .brand-title {
+      font-weight: 800;
+      font-size: 1.1rem;
+      letter-spacing: -0.02em;
+    }
+  </style>
+</head>
+<body>
+  <div class="hero-showcase">
+    <h1 style="margin:0; font-size: 2rem;">JM Monogram — Custom Vector Perfection</h1>
+    <p style="margin:0; color: #94a3b8;">Directly translated from hand-drawn sketch (Design 2: Two-Tone Interlocking)</p>
+  </div>
+
+  <div class="grid">
+    <!-- Version A: Clean Precision Geometric (Exact match to Sketch 2) -->
+    <div class="card">
+      <h3 style="margin:0; color:#cbd5e1;">A. Geometric Monogram (Recommended)</h3>
+      <div class="preview-canvas">
+        <svg width="84" height="84" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <filter id="subtle-glow" x="-20%" y="-20%" width="140%" height="140%">
+              <feDropShadow dx="0" dy="0" stdDeviation="3" flood-color="var(--primary, #f59e0b)" flood-opacity="0.4"/>
+            </filter>
+            <linearGradient id="primary-grad" x1="18" y1="16" x2="82" y2="52" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="#fbbf24"/>
+              <stop offset="100%" stop-color="#d97706"/>
+            </linearGradient>
+            <linearGradient id="white-grad" x1="18" y1="52" x2="82" y2="86" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="#ffffff"/>
+              <stop offset="100%" stop-color="#e2e8f0"/>
+            </linearGradient>
+          </defs>
+
+          <!-- Interlocking 'M' Crown (Theme Accent / Black in sketch) -->
+          <path d="M19 50 V18 L50 41 L81 18 V48" 
+                stroke="url(#primary-grad)" 
+                stroke-width="11" 
+                stroke-linecap="square" 
+                stroke-linejoin="miter" 
+                filter="url(#subtle-glow)" />
+
+          <!-- Interlocking joint band -->
+          <rect x="74" y="44" width="14" height="7" rx="1.5" fill="#f59e0b" />
+
+          <!-- Interlocking 'J' Foundation (White in sketch) -->
+          <!-- Curves smoothly at the bottom while keeping sharp geometric hooks -->
+          <path d="M81 50 V74 C81 81.5 76 86 68 86 H32 C24 86 19 81.5 19 74 V56 H32" 
+                stroke="url(#white-grad)" 
+                stroke-width="11" 
+                stroke-linecap="square" 
+                stroke-linejoin="miter" />
+        </svg>
+      </div>
+
+      <!-- Live navbar preview -->
+      <div class="nav-mockup">
+        <div class="badge-icon">
+          <svg width="24" height="24" viewBox="0 0 100 100" fill="none">
+            <path d="M19 50 V18 L50 41 L81 18 V48" stroke="#f59e0b" stroke-width="12" stroke-linecap="square" stroke-linejoin="miter"/>
+            <rect x="74" y="44" width="14" height="7" rx="1.5" fill="#f59e0b" />
+            <path d="M81 50 V74 C81 81.5 76 86 68 86 H32 C24 86 19 81.5 19 74 V56 H32" stroke="#ffffff" stroke-width="12" stroke-linecap="square" stroke-linejoin="miter"/>
+          </svg>
+        </div>
+        <div class="brand-title">JHON MARK<span style="color:#f59e0b;">.</span></div>
+      </div>
+      <p style="font-size:0.85rem; color:#94a3b8; margin:0; text-align:center;">
+        Geometric precision with curved bottom basin. Perfectly balances the "M" and "J" with high legibility.
+      </p>
+    </div>
+
+    <!-- Version B: Two-Tone Cyberpunk / Stealth (Solid Black 'M' + Crisp White 'J') -->
+    <div class="card">
+      <h3 style="margin:0; color:#cbd5e1;">B. Exact Black & White Sketch</h3>
+      <div class="preview-canvas" style="background:#1e293b;">
+        <svg width="84" height="84" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- 'M' in Solid Stealth Black with neon outline -->
+          <path d="M19 50 V18 L50 41 L81 18 V48" 
+                stroke="#0f172a" 
+                stroke-width="11" 
+                stroke-linecap="square" 
+                stroke-linejoin="miter"/>
+          <path d="M19 50 V18 L50 41 L81 18 V48" 
+                stroke="rgba(255,255,255,0.25)" 
+                stroke-width="2" 
+                stroke-linecap="square" 
+                stroke-linejoin="miter"/>
+
+          <!-- Interlocking joint band -->
+          <rect x="74" y="44" width="14" height="7" rx="1.5" fill="#0f172a" stroke="rgba(255,255,255,0.25)" stroke-width="1"/>
+
+          <!-- 'J' in Pure White -->
+          <path d="M81 50 V74 C81 81.5 76 86 68 86 H32 C24 86 19 81.5 19 74 V56 H32" 
+                stroke="#ffffff" 
+                stroke-width="11" 
+                stroke-linecap="square" 
+                stroke-linejoin="miter"/>
+        </svg>
+      </div>
+
+      <div class="nav-mockup">
+        <div class="badge-icon" style="background:#e2e8f0; border-color:#cbd5e1; box-shadow:none;">
+          <svg width="24" height="24" viewBox="0 0 100 100" fill="none">
+            <!-- On light badge: M is pure black, J is accent/grey -->
+            <path d="M19 50 V18 L50 41 L81 18 V48" stroke="#000000" stroke-width="13" stroke-linecap="square" stroke-linejoin="miter"/>
+            <rect x="73" y="43" width="16" height="8" rx="1.5" fill="#000000"/>
+            <path d="M81 50 V74 C81 81.5 76 86 68 86 H32 C24 86 19 81.5 19 74 V56 H32" stroke="#64748b" stroke-width="13" stroke-linecap="square" stroke-linejoin="miter"/>
+          </svg>
+        </div>
+        <div class="brand-title">JHON MARK<span style="color:#f59e0b;">.</span></div>
+      </div>
+      <p style="font-size:0.85rem; color:#94a3b8; margin:0; text-align:center;">
+        Strict black & white contrast directly adhering to the pen annotations.
+      </p>
+    </div>
+  </div>
+</body>
+</html>

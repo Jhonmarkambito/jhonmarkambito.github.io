@@ -1,0 +1,1207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jhon Mark Ambito — IT Student &amp; Web / AI Developer</title>
+  <meta name="description"
+    content="Portfolio of Jhon Mark T. Ambito — 4th-Year Information Technology student at Bukidnon State University building web applications, management systems, and NLP chatbots.">
+  <meta name="author" content="Jhon Mark T. Ambito">
+
+  <!-- OpenGraph / Social Sharing Meta Tags -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Jhon Mark Ambito — IT Student &amp; Web / AI Developer">
+  <meta property="og:description"
+    content="Explore projects by Jhon Mark Ambito across full-stack web development, inventory systems, networking, and RASA NLP chatbots.">
+  <meta property="og:image" content="assets/images/profile.jpg">
+  <meta property="og:url" content="https://jhonmarkambito.github.io/">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Jhon Mark Ambito — IT Student &amp; Web / AI Developer">
+  <meta name="twitter:description"
+    content="Portfolio of Jhon Mark T. Ambito — Information Technology student at Bukidnon State University.">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <!-- External Stylesheet -->
+  <link rel="stylesheet" href="css/styles.css">
+
+  <!-- Favicon Logo -->
+  <link rel="icon" type="image/svg+xml" href="assets/images/logo.svg">
+</head>
+
+<body>
+
+  <!-- Background Ambient Glow & Particles -->
+  <div class="ambient-glow-static"></div>
+  <div id="ambientGlow" class="ambient-glow"></div>
+  <canvas id="ambient-canvas"></canvas>
+
+  <!-- ==========================================================================
+       TOP NAVIGATION BAR
+       ========================================================================== -->
+  <header class="navbar-wrapper">
+    <nav aria-label="Primary Navigation">
+      <a href="#hero" class="logo">
+        <div class="logo-badge" title="Jhon Mark Monogram">
+          <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path class="jm-logo-m" d="M19 50 V18 L50 41 L81 18 V48" stroke-width="12" stroke-linecap="square"
+              stroke-linejoin="miter" />
+            <rect class="jm-logo-joint" x="74" y="44" width="14" height="7" rx="1.5" />
+            <path class="jm-logo-j" d="M81 50 V74 C81 81.5 76 86 68 86 H32 C24 86 19 81.5 19 74 V56 H32"
+              stroke-width="12" stroke-linecap="square" stroke-linejoin="miter" />
+          </svg>
+        </div>
+        <span>JHON MARK<span style="color:var(--primary);">.</span></span>
+      </a>
+
+      <!-- Desktop Links -->
+      <ul class="nav-links">
+        <li><a href="#about" class="nav-item">About</a></li>
+        <li><a href="#projects" class="nav-item">Projects</a></li>
+        <li><a href="#terminal" class="nav-item">Terminal <span
+              style="font-size:0.7rem; color:var(--primary);">LIVE</span></a></li>
+        <li><a href="#skills" class="nav-item">Skills</a></li>
+        <li><a href="#experience" class="nav-item">Journey</a></li>
+        <li><a href="#certifications" class="nav-item">Certificates</a></li>
+        <li><a href="#contact" class="nav-item">Contact</a></li>
+      </ul>
+
+      <!-- Theme & Action Buttons -->
+      <div class="nav-actions">
+        <!-- Theme Switcher -->
+        <div class="theme-picker" title="Switch Accent Theme" role="group" aria-label="Theme color switcher">
+          <div class="theme-dot amber active" data-color="amber" onclick="switchTheme('amber')" title="Electric Amber">
+          </div>
+          <div class="theme-dot cyan" data-color="cyan" onclick="switchTheme('cyan')" title="Cyber Cyan"></div>
+          <div class="theme-dot emerald" data-color="emerald" onclick="switchTheme('emerald')" title="Emerald Neon">
+          </div>
+          <div class="theme-dot violet" data-color="violet" onclick="switchTheme('violet')" title="Royal Violet"></div>
+        </div>
+
+        <!-- Sound FX Mute/Unmute Toggle -->
+        <button id="soundToggle" class="icon-btn" onclick="toggleAudio()" title="Toggle UI Sound Effects"
+          aria-label="Toggle UI Sound Effects">
+          🔊
+        </button>
+
+        <a href="#contact" class="btn btn-primary btn-sm">Get in Touch</a>
+
+        <button class="menu-toggle" onclick="toggleMobileMenu()" aria-label="Toggle navigation">
+          ☰
+        </button>
+      </div>
+    </nav>
+
+    <!-- Mobile Drawer Menu -->
+    <div id="mobileMenu" class="mobile-menu">
+      <a href="#about" onclick="toggleMobileMenu()">About Me</a>
+      <a href="#projects" onclick="toggleMobileMenu()">Projects</a>
+      <a href="#terminal" onclick="toggleMobileMenu()">Live Terminal</a>
+      <a href="#skills" onclick="toggleMobileMenu()">Skills</a>
+      <a href="#experience" onclick="toggleMobileMenu()">Journey</a>
+      <a href="#certifications" onclick="toggleMobileMenu()">Certificates</a>
+      <a href="#contact" onclick="toggleMobileMenu()">Contact</a>
+      <div style="display:flex; justify-content:space-between; align-items:center; padding-top:10px;">
+        <span style="font-size:0.85rem; color:var(--text-muted)">Theme Color:</span>
+        <div class="theme-picker" style="display:flex;">
+          <div class="theme-dot amber active" data-color="amber" onclick="switchTheme('amber')"></div>
+          <div class="theme-dot cyan" data-color="cyan" onclick="switchTheme('cyan')"></div>
+          <div class="theme-dot emerald" data-color="emerald" onclick="switchTheme('emerald')"></div>
+          <div class="theme-dot violet" data-color="violet" onclick="switchTheme('violet')"></div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ==========================================================================
+         HERO SECTION
+         ========================================================================== -->
+    <section id="hero" class="hero">
+      <div class="container">
+        <div class="hero-grid">
+
+          <!-- Left Column: Intro & CTA -->
+          <div class="hero-info">
+            <div class="hero-top-badges">
+              <div class="hero-status">
+                <span class="status-dot"></span>
+                <span>Open for OJT &amp; Junior Dev Opportunities</span>
+              </div>
+              <div class="telemetry-pill">
+                <span id="liveClock">14:30:00 GMT+8</span>
+                <span>• Philippines</span>
+              </div>
+            </div>
+
+            <h1>
+              Hi, I'm <br>
+              <span class="gradient-text">Jhon Mark</span>
+            </h1>
+
+            <div class="role-rotator-wrap">
+              <span>Building with</span>
+              <div class="role-rotator popup-active" id="roleRotator">Web Development</div>
+            </div>
+
+            <p class="hero-bio">
+              4th-year Information Technology student at <strong>Bukidnon State University</strong> passionate about
+              turning real-world problems into practical software — from point-of-sale &amp; inventory systems to
+              AI-powered RASA chatbots and full-stack web apps.
+            </p>
+
+            <div class="hero-btns">
+              <a href="#projects" class="btn btn-primary" onclick="playBeep()">
+                <span>Explore Projects</span>
+                <span>→</span>
+              </a>
+              <button class="btn btn-secondary" onclick="openResumeModal()">
+                <span>📄 View Resume</span>
+              </button>
+              <a href="#terminal" class="btn btn-secondary" onclick="playBeep()">
+                <span>💻 Live Terminal</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Right Column: Avatar & Floating Tech Badges -->
+          <div class="hero-visual">
+            <div class="avatar-wrapper">
+              <div class="avatar-glow-ring"></div>
+              <div class="avatar-inner">
+                <img src="assets/images/profile.jpg" alt="Jhon Mark Ambito" class="avatar-photo" loading="eager">
+              </div>
+
+              <!-- Orbiting Tech Tags -->
+              <div class="orbit-badge b1">
+                <span style="color:#61dafb;">⚛</span> React &amp; TS
+              </div>
+              <div class="orbit-badge b2">
+                <span style="color:#68a063;">🤖</span> RASA &amp; NLP
+              </div>
+              <div class="orbit-badge b3">
+                <span style="color:#10b981;">🍃</span> Node &amp; MongoDB
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         MARQUEE TICKER
+         ========================================================================== -->
+    <div class="ticker-wrap">
+      <div class="ticker-content">
+        <div class="ticker-item"><span class="ticker-dot"></span> FULL-STACK WEB DEVELOPMENT</div>
+        <div class="ticker-item"><span class="ticker-dot"></span> REACTJS &amp; TYPESCRIPT</div>
+        <div class="ticker-item"><span class="ticker-dot"></span> NODE.JS &amp; MONGODB</div>
+        <div class="ticker-item"><span class="ticker-dot"></span> RASA CHATBOT &amp; NLP</div>
+        <div class="ticker-item"><span class="ticker-dot"></span> CISCO NETWORKING FUNDAMENTALS</div>
+        <div class="ticker-item"><span class="ticker-dot"></span> GIT &amp; AGILE WORKFLOWS</div>
+        <div class="ticker-item"><span class="ticker-dot"></span> FULL-STACK WEB DEVELOPMENT</div>
+        <div class="ticker-item"><span class="ticker-dot"></span> REACTJS &amp; TYPESCRIPT</div>
+        <div class="ticker-item"><span class="ticker-dot"></span> NODE.JS &amp; MONGODB</div>
+        <div class="ticker-item"><span class="ticker-dot"></span> RASA CHATBOT &amp; NLP</div>
+        <div class="ticker-item"><span class="ticker-dot"></span> CISCO NETWORKING FUNDAMENTALS</div>
+        <div class="ticker-item"><span class="ticker-dot"></span> GIT &amp; AGILE WORKFLOWS</div>
+      </div>
+    </div>
+
+    <!-- ==========================================================================
+         ABOUT ME SECTION
+         ========================================================================== -->
+    <section id="about" class="section-wrap">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag">About Me</div>
+          <h2 class="section-title">Learning by <span>Building</span></h2>
+          <p class="section-subtitle">Bridging academic research and hands-on software engineering.</p>
+        </div>
+
+        <div class="about-grid">
+          <!-- Main Bio Card -->
+          <div class="glass-card about-bio-card">
+            <div>
+              <h3>Hello, I'm Jhon Mark T. Ambito</h3>
+              <p>
+                I'm a 4th-year Bachelor of Science in Information Technology student at <strong>Bukidnon State
+                  University</strong>. I enjoy designing and building software that solves tangible operational problems
+                — whether that's automating student inquiries with Natural Language Processing or streamlining retail
+                transactions and stock tracking.
+              </p>
+              <p>
+                My approach combines curiosity with disciplined execution: I learn new stacks by shipping working
+                prototypes, documenting system architectures, and iterating based on real user feedback.
+              </p>
+            </div>
+
+            <div>
+              <div
+                style="font-weight:700; font-size:0.82rem; letter-spacing:0.06em; margin-bottom:12px; color:var(--text-main);">
+                CORE FOCUS AREAS
+              </div>
+              <div class="highlight-chips">
+                <span class="chip">💻 Web Application Development</span>
+                <span class="chip">🤖 Conversational AI &amp; NLP</span>
+                <span class="chip">🗄️ Database Design &amp; CRUD Systems</span>
+                <span class="chip">🌐 Routing &amp; Switching (CCNA)</span>
+                <span class="chip">🔍 Technical Research</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column: Bento Highlights -->
+          <div class="about-side-stack">
+            <div class="glass-card info-card">
+              <div class="info-icon">🎓</div>
+              <div class="info-text">
+                <h4>BS Information Technology</h4>
+                <p>4th-Year Undergraduate at Bukidnon State University, Malaybalay City, Bukidnon.</p>
+              </div>
+            </div>
+
+            <div class="glass-card info-card">
+              <div class="info-icon">🧠</div>
+              <div class="info-text">
+                <h4>AI &amp; NLP Capstone Researcher</h4>
+                <p>Developing and documenting a RASA-based student assistance chatbot for university support workflows.
+                </p>
+              </div>
+            </div>
+
+            <div class="glass-card info-card">
+              <div class="info-icon">🌐</div>
+              <div class="info-text">
+                <h4>Cisco Networking &amp; AI Certified</h4>
+                <p>Trained in CCNA Switching, Routing &amp; Wireless Essentials and Responsible AI Literacy.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         FEATURED PROJECTS SHOWCASE
+         ========================================================================== -->
+    <section id="projects" class="section-wrap">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag">Showcase</div>
+          <h2 class="section-title">Featured <span>Projects</span></h2>
+          <p class="section-subtitle">Key systems and research applications I've designed and built.</p>
+        </div>
+
+        <div class="filter-tabs">
+          <button class="filter-btn active" onclick="filterProjects('all', this)">All Projects</button>
+          <button class="filter-btn" onclick="filterProjects('applications', this)">Web &amp; Business Apps</button>
+          <button class="filter-btn" onclick="filterProjects('ai', this)">AI &amp; NLP</button>
+        </div>
+
+        <div class="projects-grid" id="projectsGrid">
+
+          <!-- Project 1: PCH Cashier Inventory -->
+          <div class="glass-card project-card" data-category="applications">
+            <div class="project-preview">
+              <div class="art-glow-spot"></div>
+              <div class="art-mesh-pattern"></div>
+              <div class="preview-art">
+                <div class="project-mockup-window">
+                  <div class="mockup-bar">
+                    <span></span><span></span><span></span>
+                    <small>pch-pos-dashboard.app</small>
+                  </div>
+                  <div class="mockup-body">
+                    <div class="mockup-row">
+                      <span class="mockup-tag">SKU-1042</span>
+                      <span class="mockup-val">In Stock (84)</span>
+                    </div>
+                    <div class="mockup-progress">
+                      <div style="width:78%"></div>
+                    </div>
+                    <div class="mockup-row">
+                      <span>Today's Sales</span>
+                      <strong style="color:var(--primary);">₱ 24,850.00</strong>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="project-category-badge">POS &amp; Inventory System</div>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">PCH Cashier &amp; Inventory Management System</h3>
+              <p class="project-desc">
+                An end-to-end point-of-sale and inventory tracking solution built for a retail hardware business to
+                digitize product catalogs, speed up checkout calculations, and prevent stockouts.
+              </p>
+              <div class="tech-stack-list">
+                <span class="tech-pill">POS Checkout</span>
+                <span class="tech-pill">Inventory Tracking</span>
+                <span class="tech-pill">Relational Database</span>
+                <span class="tech-pill">Sales Reporting</span>
+              </div>
+              <div class="project-actions">
+                <button class="project-link" onclick="openProjectModal('pch')">
+                  <span>Read Case Study</span>
+                  <span>↗</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 2: BUKSU AI Chatbot -->
+          <div class="glass-card project-card" data-category="ai">
+            <div class="project-preview">
+              <div class="art-glow-spot"></div>
+              <div class="art-mesh-pattern"></div>
+              <div class="preview-art">
+                <div class="project-mockup-window">
+                  <div class="mockup-bar">
+                    <span></span><span></span><span></span>
+                    <small>buksu-rasa-nlu.ai</small>
+                  </div>
+                  <div class="mockup-body">
+                    <div class="mockup-chat-user">How do I enroll for 2nd sem?</div>
+                    <div class="mockup-chat-bot">
+                      <span style="color:var(--primary); font-family:'Fira Code',monospace; font-size:0.65rem;">intent:
+                        enrollment_process (0.97)</span>
+                      <div>Here are the BukSU enrollment steps...</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="project-category-badge">Conversational AI &amp; NLP</div>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">BUKSU AI-Powered Student Assistance Chatbot</h3>
+              <p class="project-desc">
+                An NLP-driven virtual assistant built with the RASA framework to automate student FAQ resolution and
+                guide students through Bukidnon State University procedures 24/7.
+              </p>
+              <div class="tech-stack-list">
+                <span class="tech-pill">RASA Open Source</span>
+                <span class="tech-pill">Python</span>
+                <span class="tech-pill">NLU Pipeline</span>
+                <span class="tech-pill">Academic Research</span>
+              </div>
+              <div class="project-actions">
+                <button class="project-link" onclick="openProjectModal('chatbot')">
+                  <span>Read Case Study</span>
+                  <span>↗</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 3: Web App Aquatrack -->
+          <div class="glass-card project-card" data-category="applications">
+            <div class="project-preview">
+              <div class="art-glow-spot"></div>
+              <div class="art-mesh-pattern"></div>
+              <div class="preview-art">
+                <div class="project-mockup-window">
+                  <div class="mockup-bar">
+                    <span></span><span></span><span></span>
+                    <small>aquatrack-portal.web</small>
+                  </div>
+                  <div class="mockup-body">
+                    <div class="mockup-row">
+                      <span>Water Usage Status</span>
+                      <span class="mockup-tag" style="color:#38bdf8;">Optimal</span>
+                    </div>
+                    <div class="mockup-bars-mini">
+                      <span style="height:45%"></span>
+                      <span style="height:70%"></span>
+                      <span style="height:60%"></span>
+                      <span style="height:90%"></span>
+                      <span style="height:75%"></span>
+                    </div>
+                    <div class="mockup-row">
+                      <span>Blade View Engine</span>
+                      <strong style="color:var(--primary);">Active</strong>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="project-category-badge">Full-Stack Web App</div>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">AquaTrack Web Application</h3>
+              <p class="project-desc">
+                A server-rendered web application built with Laravel Blade templates for monitoring records, managing
+                user workflows, and presenting clean operational dashboards.
+              </p>
+              <div class="tech-stack-list">
+                <span class="tech-pill">Laravel / Blade</span>
+                <span class="tech-pill">PHP</span>
+                <span class="tech-pill">MVC Architecture</span>
+                <span class="tech-pill">Responsive UI</span>
+              </div>
+              <div class="project-actions">
+                <button class="project-link" onclick="openProjectModal('aquatrack')">
+                  <span>Read Case Study</span>
+                  <span>↗</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Curated Public GitHub Repositories -->
+        <h3 class="repo-heading">Public Repositories &amp; Code Samples on GitHub</h3>
+        <div class="repo-grid">
+          <a class="glass-card repo-card"
+            href="https://github.com/Jhonmarkambito/DEVCONSUI_MoveCodeCamp2026_Level1_Ambito" target="_blank"
+            rel="noopener">
+            <div class="repo-card-top">
+              <strong>DEVCONSUI MoveCodeCamp 2026</strong>
+              <span class="repo-lang-badge">TypeScript</span>
+            </div>
+            <p>Level 1 challenge submission exploring modern TypeScript development and Web3/Sui ecosystem concepts.</p>
+          </a>
+
+          <a class="glass-card repo-card" href="https://github.com/Jhonmarkambito/jhonmarkambito.github.io"
+            target="_blank" rel="noopener">
+            <div class="repo-card-top">
+              <strong>jhonmarkambito.github.io</strong>
+              <span class="repo-lang-badge">HTML / CSS / JS</span>
+            </div>
+            <p>Source repository for my personal developer portfolio website hosted on GitHub Pages.</p>
+          </a>
+
+          <a class="glass-card repo-card" href="https://github.com/Jhonmarkambito/IPT2-Module1-Practical"
+            target="_blank" rel="noopener">
+            <div class="repo-card-top">
+              <strong>IPT2-Module1-Practical</strong>
+              <span class="repo-lang-badge">Integrative Prog</span>
+            </div>
+            <p>Practical laboratory implementation for Integrative Programming and Technologies 2.</p>
+          </a>
+
+          <a class="glass-card repo-card" href="https://github.com/Jhonmarkambito/AMBITO_T314_BSIT-1E" target="_blank"
+            rel="noopener">
+            <div class="repo-card-top">
+              <strong>AMBITO_T314_BSIT-1E</strong>
+              <span class="repo-lang-badge">Academic Repo</span>
+            </div>
+            <p>Foundational programming exercises and coursework repository from BSIT freshman year.</p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Modal for Project Details, Certificate Previews & Resume -->
+    <div id="projectModal" class="modal-overlay" onclick="closeProjectModal(event)" role="dialog" aria-modal="true">
+      <div class="modal-card" id="modalCard">
+        <button class="modal-close-btn" onclick="closeProjectModal(null)" aria-label="Close modal">✕</button>
+        <div id="modalContent"></div>
+      </div>
+    </div>
+
+    <!-- ==========================================================================
+         LIVE PLUGIN 1: LIVE INTERACTIVE DEVELOPER TERMINAL SECTION
+         ========================================================================== -->
+    <section id="terminal" class="section-wrap terminal-section">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag">Interactive Plugin</div>
+          <h2 class="section-title">Developer <span>CLI Terminal</span></h2>
+          <p class="section-subtitle">Experience a real interactive Unix command line right inside the browser. Try
+            typing commands or click the action pills below.</p>
+        </div>
+
+        <div class="terminal-window">
+          <!-- Terminal Header Bar -->
+          <div class="terminal-header">
+            <div class="terminal-controls">
+              <span class="term-btn term-close" onclick="termCommand('clear')" title="Clear terminal"></span>
+              <span class="term-btn term-min"></span>
+              <span class="term-btn term-max" onclick="termCommand('matrix')" title="Launch Matrix Rain"></span>
+            </div>
+            <div class="terminal-title">
+              <span>⚡</span> jhon@portfolio-v2: ~ (bash)
+            </div>
+            <div style="font-size:0.75rem; color:var(--primary); font-family:monospace;">
+              status: 200 OK
+            </div>
+          </div>
+
+          <!-- Quick Action Command Chips -->
+          <div class="terminal-quick-chips">
+            <span style="font-size:0.75rem; color:var(--text-dim); margin-right:4px;">Quick Run:</span>
+            <button class="term-chip" onclick="termCommand('help')">⚡ help</button>
+            <button class="term-chip" onclick="termCommand('projects')">🚀 projects</button>
+            <button class="term-chip" onclick="termCommand('skills')">🛠️ skills</button>
+            <button class="term-chip" onclick="termCommand('resume')">📄 resume</button>
+            <button class="term-chip" onclick="termCommand('matrix')">🟢 matrix rain</button>
+            <button class="term-chip" onclick="termCommand('theme cyan')">🎨 theme cyan</button>
+            <button class="term-chip" onclick="termCommand('theme amber')">🔥 theme amber</button>
+            <button class="term-chip" onclick="termCommand('whoami')">👤 whoami</button>
+            <button class="term-chip" onclick="termCommand('clear')">🧹 clear</button>
+          </div>
+
+          <!-- Terminal Output Body -->
+          <div class="terminal-body" id="termOutput" onclick="document.getElementById('termInput').focus()">
+            <div class="term-line">
+              <div class="term-output highlight">
+                ================================================================================
+                Welcome to Jhon Mark's Interactive Developer Terminal (v2.5.0)
+                Type 'help' to view available system commands or click the pills above.
+                ================================================================================
+              </div>
+            </div>
+            <div class="term-line">
+              <div class="term-prompt">
+                <span class="user-host">guest@jhonmark:~$</span> <span class="term-output">whoami</span>
+              </div>
+              <div class="term-output success">
+                Visitor detected! Welcome to Jhon Mark Ambito's interactive portfolio workspace.
+              </div>
+            </div>
+          </div>
+
+          <!-- Terminal Input Row -->
+          <div class="terminal-header"
+            style="background:rgba(10,10,14,0.95); border-top:1px solid var(--glass-border); padding:10px 18px;">
+            <div class="term-prompt" style="font-family:'Fira Code', monospace; font-size:0.88rem;">
+              <span class="user-host">guest@jhonmark:~$</span>
+            </div>
+            <input type="text" id="termInput" class="terminal-input"
+              placeholder="type a command (e.g. 'help', 'resume', 'matrix', 'skills')..."
+              onkeydown="handleTermKey(event)" aria-label="Terminal command input">
+            <button class="btn btn-primary btn-sm" style="padding:4px 12px; font-size:0.75rem;"
+              onclick="submitTermInput()">Enter</button>
+          </div>
+
+          <!-- Fullscreen Matrix Canvas -->
+          <canvas id="matrixCanvas" onclick="stopMatrix()"></canvas>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SKILLS & TECHNOLOGIES
+         ========================================================================== -->
+    <section id="skills" class="section-wrap">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag">Technical Stack</div>
+          <h2 class="section-title">Skills &amp; <span>Technologies</span></h2>
+          <p class="section-subtitle">Languages, frameworks, and tools I use to build and ship projects.</p>
+        </div>
+
+        <div class="skills-tabs">
+          <button class="skill-tab-btn active" onclick="switchSkillTab('frontend', this)">Frontend &amp; UI</button>
+          <button class="skill-tab-btn" onclick="switchSkillTab('backend', this)">Backend &amp; Database</button>
+          <button class="skill-tab-btn" onclick="switchSkillTab('ai', this)">AI &amp; Networking</button>
+          <button class="skill-tab-btn" onclick="switchSkillTab('tools', this)">Workflow &amp; Tools</button>
+        </div>
+
+        <!-- Frontend Panel -->
+        <div class="skills-panel active" id="skill-frontend">
+          <div class="glass-card skill-card">
+            <div class="skill-header">
+              <div class="skill-name"><span class="skill-badge">⚛</span> ReactJS</div>
+              <span class="skill-pct">Component UI</span>
+            </div>
+            <div class="skill-meta">
+              <span>Building interactive single-page interfaces, reusable components, and state-driven views.</span>
+            </div>
+          </div>
+
+          <div class="glass-card skill-card">
+            <div class="skill-header">
+              <div class="skill-name"><span class="skill-badge">JS</span> JavaScript (ES6+)</div>
+              <span class="skill-pct">Core Language</span>
+            </div>
+            <div class="skill-meta">
+              <span>DOM manipulation, async/await API integration, interactive canvas, and client-side logic.</span>
+            </div>
+          </div>
+
+          <div class="glass-card skill-card">
+            <div class="skill-header">
+              <div class="skill-name"><span class="skill-badge">TS</span> TypeScript</div>
+              <span class="skill-pct">Typed JS</span>
+            </div>
+            <div class="skill-meta">
+              <span>Used in DEVCON Sui MoveCodeCamp 2026 for type-safe application development.</span>
+            </div>
+          </div>
+
+          <div class="glass-card skill-card">
+            <div class="skill-header">
+              <div class="skill-name"><span class="skill-badge">🌐</span> HTML5 &amp; CSS3</div>
+              <span class="skill-pct">Responsive Layout</span>
+            </div>
+            <div class="skill-meta">
+              <span>Semantic markup, CSS Grid/Flexbox, custom glassmorphism themes, and mobile-first design.</span>
+            </div>
+          </div>
+
+          <div class="glass-card skill-card">
+            <div class="skill-header">
+              <div class="skill-name"><span class="skill-badge">🔷</span> Laravel Blade</div>
+              <span class="skill-pct">Templating</span>
+            </div>
+            <div class="skill-meta">
+              <span>Server-side templating and dynamic view rendering used in the AquaTrack web app.</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Backend Panel -->
+        <div class="skills-panel" id="skill-backend">
+          <div class="glass-card skill-card">
+            <div class="skill-header">
+              <div class="skill-name"><span class="skill-badge">🟢</span> Node.js</div>
+              <span class="skill-pct">Runtime &amp; APIs</span>
+            </div>
+            <div class="skill-meta">
+              <span>Developing RESTful backend services, server-side routing, and business logic.</span>
+            </div>
+          </div>
+
+          <div class="glass-card skill-card">
+            <div class="skill-header">
+              <div class="skill-name"><span class="skill-badge">🍃</span> MongoDB &amp; SQL</div>
+              <span class="skill-pct">Data Modeling</span>
+            </div>
+            <div class="skill-meta">
+              <span>Designing document schemas and relational tables for inventory, sales, and user records.</span>
+            </div>
+          </div>
+
+          <div class="glass-card skill-card">
+            <div class="skill-header">
+              <div class="skill-name"><span class="skill-badge">🐘</span> PHP / MVC</div>
+              <span class="skill-pct">Server-Side</span>
+            </div>
+            <div class="skill-meta">
+              <span>Full-stack web application routing, controllers, and database CRUD operations.</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- AI & Networking Panel -->
+        <div class="skills-panel" id="skill-ai">
+          <div class="glass-card skill-card">
+            <div class="skill-header">
+              <div class="skill-name"><span class="skill-badge">🤖</span> RASA Framework</div>
+              <span class="skill-pct">Conversational AI</span>
+            </div>
+            <div class="skill-meta">
+              <span>Designing intents, entities, dialogue stories, and custom actions for the BukSU Chatbot.</span>
+            </div>
+          </div>
+
+          <div class="glass-card skill-card">
+            <div class="skill-header">
+              <div class="skill-name"><span class="skill-badge">🧠</span> Natural Language Processing</div>
+              <span class="skill-pct">NLU Pipelines</span>
+            </div>
+            <div class="skill-meta">
+              <span>Training intent classification models, evaluating accuracy, and writing research
+                documentation.</span>
+            </div>
+          </div>
+
+          <div class="glass-card skill-card">
+            <div class="skill-header">
+              <div class="skill-name"><span class="skill-badge">🌐</span> Cisco Networking (CCNA)</div>
+              <span class="skill-pct">Switching &amp; Routing</span>
+            </div>
+            <div class="skill-meta">
+              <span>VLANs, inter-VLAN routing, wireless LAN configuration, and network troubleshooting.</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tools Panel -->
+        <div class="skills-panel" id="skill-tools">
+          <div class="glass-card skill-card">
+            <div class="skill-header">
+              <div class="skill-name"><span class="skill-badge">🐙</span> Git &amp; GitHub</div>
+              <span class="skill-pct">Version Control</span>
+            </div>
+            <div class="skill-meta">
+              <span>Source code management, branching workflows, and project documentation.</span>
+            </div>
+          </div>
+
+          <div class="glass-card skill-card">
+            <div class="skill-header">
+              <div class="skill-name"><span class="skill-badge">🆚</span> VS Code</div>
+              <span class="skill-pct">Development IDE</span>
+            </div>
+            <div class="skill-meta">
+              <span>Primary code editor configured with debugging, linting, and integrated terminal tools.</span>
+            </div>
+          </div>
+
+          <div class="glass-card skill-card">
+            <div class="skill-header">
+              <div class="skill-name"><span class="skill-badge">📝</span> Technical Research</div>
+              <span class="skill-pct">Documentation</span>
+            </div>
+            <div class="skill-meta">
+              <span>System architecture diagrams, capstone manuscript writing, and user evaluation.</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         WORK EXPERIENCE & TIMELINE
+         ========================================================================== -->
+    <section id="experience" class="section-wrap">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag">My Journey</div>
+          <h2 class="section-title">Education &amp; <span>Milestones</span></h2>
+          <p class="section-subtitle">Academic progression, technical bootcamps, and project milestones.</p>
+        </div>
+
+        <div class="timeline-container">
+          <!-- 2026 -->
+          <div class="timeline-item">
+            <div class="timeline-node"></div>
+            <div class="glass-card timeline-card">
+              <div class="timeline-header">
+                <div>
+                  <h3 class="timeline-role">Capstone Research &amp; Full-Stack Projects</h3>
+                  <div class="timeline-company">Bukidnon State University • BS Information Technology (4th Year)</div>
+                </div>
+                <div class="timeline-date">2026</div>
+              </div>
+              <p class="timeline-desc">
+                Leading development and research documentation for AI-assisted student services alongside web
+                engineering bootcamps.
+              </p>
+              <ul class="timeline-bullets">
+                <li>Developed the <strong>BUKSU AI-Powered Student Assistance Chatbot</strong> using RASA and NLP,
+                  authoring the corresponding research manuscript.</li>
+                <li>Built the <strong>AquaTrack Web Application</strong> (Apr 2026) using Laravel Blade and Participated
+                  in <strong>DEVCON Sui MoveCodeCamp 2026</strong> (May 2026) with TypeScript.</li>
+                <li>Earned the micro-credential certificate in <strong>Introduction to AI Literacy and Responsible
+                    Use</strong> (Sep 2026).</li>
+              </ul>
+              <div class="tech-stack-list">
+                <span class="tech-pill">RASA</span>
+                <span class="tech-pill">NLP</span>
+                <span class="tech-pill">TypeScript</span>
+                <span class="tech-pill">Laravel Blade</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 2025 -->
+          <div class="timeline-item">
+            <div class="timeline-node"></div>
+            <div class="glass-card timeline-card">
+              <div class="timeline-header">
+                <div>
+                  <h3 class="timeline-role">Cisco Networking &amp; Integrative Programming</h3>
+                  <div class="timeline-company">Bukidnon State University • BS Information Technology</div>
+                </div>
+                <div class="timeline-date">2025</div>
+              </div>
+              <p class="timeline-desc">
+                Focused on enterprise networking fundamentals, systems integration, and business application
+                development.
+              </p>
+              <ul class="timeline-bullets">
+                <li>Completed <strong>CCNA: Switching, Routing, and Wireless Essentials</strong> via Cisco Networking
+                  Academy (03 Dec 2025).</li>
+                <li>Built the <strong>PCH Cashier &amp; Inventory Management System</strong> to streamline retail
+                  hardware store operations.</li>
+                <li>Completed Integrative Programming &amp; Technologies coursework repositories (`IPT-3` &amp;
+                  `IPT2-Module1-Practical`).</li>
+              </ul>
+              <div class="tech-stack-list">
+                <span class="tech-pill">Cisco CCNA</span>
+                <span class="tech-pill">POS &amp; Inventory</span>
+                <span class="tech-pill">Systems Integration</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 2023 -->
+          <div class="timeline-item">
+            <div class="timeline-node"></div>
+            <div class="glass-card timeline-card">
+              <div class="timeline-header">
+                <div>
+                  <h3 class="timeline-role">IT Foundations &amp; First Web Portfolio</h3>
+                  <div class="timeline-company">Bukidnon State University • BS Information Technology</div>
+                </div>
+                <div class="timeline-date">2023</div>
+              </div>
+              <p class="timeline-desc">
+                Started my BSIT degree, adopting Git version control and deploying my first static web projects.
+              </p>
+              <ul class="timeline-bullets">
+                <li>Published my first personal portfolio on GitHub Pages (`jhonmarkambito.github.io`, Dec 2023).</li>
+                <li>Created foundational programming repositories (`AMBITO_T314_BSIT-1E`, Aug 2023).</li>
+              </ul>
+              <div class="tech-stack-list">
+                <span class="tech-pill">HTML5 &amp; CSS3</span>
+                <span class="tech-pill">Git</span>
+                <span class="tech-pill">GitHub Pages</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         CERTIFICATIONS & CREDENTIALS
+         ========================================================================== -->
+    <section id="certifications" class="section-wrap">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag">Continuous Growth</div>
+          <h2 class="section-title">Certificates &amp; <span>Credentials</span></h2>
+          <p class="section-subtitle">Verified completion certificates (PDF) from Cisco Networking Academy and
+            micro-credential programs.</p>
+        </div>
+
+        <div class="certs-grid">
+          <!-- Cert 1: Ambito CHED -->
+          <div class="glass-card cert-card">
+            <div>
+              <div class="cert-img-wrap"
+                onclick="window.open('assets/images/certificates/Ambito_Ched -Certificate.pdf', '_blank')"
+                title="Open Introduction to AI Literacy and Responsible Use PDF">
+                <div class="cert-pdf-preview">
+                  <div class="cert-pdf-icon">
+                    <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <rect x="8" y="4" width="36" height="48" rx="4" fill="rgba(255,153,0,0.12)"
+                        stroke="rgba(255,153,0,0.5)" stroke-width="1.5" />
+                      <path d="M44 4v12h12" stroke="rgba(255,153,0,0.5)" stroke-width="1.5" fill="none" />
+                      <path d="M44 4l12 12" stroke="rgba(255,153,0,0.5)" stroke-width="1.5" />
+                      <text x="32" y="36" text-anchor="middle" font-family="'Outfit', sans-serif" font-size="10"
+                        font-weight="700" fill="rgba(255,153,0,0.8)">PDF</text>
+                    </svg>
+                  </div>
+                  <div class="cert-pdf-title">Introduction to AI Literacy and Responsible Use</div>
+                  <div class="cert-pdf-sub">Click to open &amp; verify PDF</div>
+                </div>
+                <div class="cert-img-overlay">
+                  <span class="cert-view-badge">📄 Open Certificate PDF</span>
+                </div>
+              </div>
+              <div class="cert-card-body">
+                <div class="cert-issuer">Micro-Credentials Course • Issued 14 September 2026</div>
+                <h4>Introduction to AI Literacy and Responsible Use</h4>
+                <p>Focused on ethical AI deployment, prompt engineering literacy, and responsible governance. Credential
+                  ID: <code>VOGRY4969OAK5</code>.</p>
+              </div>
+            </div>
+            <div class="cert-meta">
+              <span class="cert-badge-check">✓ Verified Certificate</span>
+              <a href="assets/images/certificates/Ambito_Ched -Certificate.pdf" target="_blank"
+                style="font-size:0.78rem; color:var(--primary); font-weight:600;">↗ View / Download PDF</a>
+            </div>
+          </div>
+
+          <!-- Cert 2: Cisco -->
+          <div class="glass-card cert-card">
+            <div>
+              <div class="cert-img-wrap"
+                onclick="window.open('assets/images/certificates/Cisco certificate.pdf', '_blank')"
+                title="Open Cisco Certificate PDF">
+                <div class="cert-pdf-preview"
+                  style="--cert-color: rgba(0, 120, 212, 0.7); --cert-bg: rgba(0, 120, 212, 0.1);">
+                  <div class="cert-pdf-icon">
+                    <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <rect x="8" y="4" width="36" height="48" rx="4" fill="rgba(0,120,212,0.12)"
+                        stroke="rgba(0,120,212,0.5)" stroke-width="1.5" />
+                      <path d="M44 4v12h12" stroke="rgba(0,120,212,0.5)" stroke-width="1.5" fill="none" />
+                      <path d="M44 4l12 12" stroke="rgba(0,120,212,0.5)" stroke-width="1.5" />
+                      <text x="32" y="36" text-anchor="middle" font-family="'Outfit', sans-serif" font-size="10"
+                        font-weight="700" fill="rgba(0,120,212,0.8)">PDF</text>
+                    </svg>
+                  </div>
+                  <div class="cert-pdf-title">CCNA: Switching, Routing, and Wireless Essentials</div>
+                  <div class="cert-pdf-sub">Click to open &amp; verify PDF</div>
+                </div>
+                <div class="cert-img-overlay">
+                  <span class="cert-view-badge">📄 Open Certificate PDF</span>
+                </div>
+              </div>
+              <div class="cert-card-body">
+                <div class="cert-issuer">Cisco Networking Academy • Bukidnon State University • 03 Dec 2025</div>
+                <h4>CCNA: Switching, Routing, and Wireless Essentials</h4>
+                <p>Hands-on training in Layer 2/3 switching, VLAN configuration, Spanning Tree Protocol, WLANs, and
+                  network security best practices.</p>
+              </div>
+            </div>
+            <div class="cert-meta">
+              <span class="cert-badge-check">✓ Verified Certificate</span>
+              <a href="assets/images/certificates/Cisco certificate.pdf" target="_blank"
+                style="font-size:0.78rem; color:var(--primary); font-weight:600;">↗ View / Download PDF</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         CONTACT & INQUIRIES
+         ========================================================================== -->
+    <section id="contact" class="section-wrap">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag">Let's Connect</div>
+          <h2 class="section-title">Start a <span>Conversation</span></h2>
+          <p class="section-subtitle">Available for OJT / internship placements, capstone collaborations, and junior
+            developer roles.</p>
+        </div>
+
+        <div class="contact-grid">
+          <!-- Info & Socials -->
+          <div class="contact-info-panel">
+            <h3>Let's build something together.</h3>
+            <p>Whether you have an internship opportunity, a project question, or want a copy of my resume, feel free to
+              reach out directly.</p>
+
+            <!-- Quick Email Copy Box -->
+            <div class="quick-email-box">
+              <div>
+                <div style="font-size:0.75rem; text-transform:uppercase; color:var(--text-dim); font-weight:700;">
+                  Direct Email
+                </div>
+                <div class="email-display" id="emailText">jhonmarkambito82@gmail.com</div>
+              </div>
+              <button class="btn btn-secondary btn-sm" onclick="copyEmail()">
+                📋 Copy Email
+              </button>
+            </div>
+
+            <!-- Social Links Grid with Real Brand Logos -->
+            <div>
+              <div style="font-size:0.85rem; font-weight:700; margin-bottom:12px; color:var(--text-main);">
+                FIND ME ONLINE
+              </div>
+              <div class="social-links-grid">
+                <a href="https://github.com/Jhonmarkambito" target="_blank" rel="noopener" class="social-btn"
+                  title="GitHub">
+                  <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true">
+                    <path
+                      d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
+                  </svg>
+                  <span>GitHub</span>
+                </a>
+
+                <a href="mailto:jhonmark82@gmail.com" class="social-btn" title="Email">
+                  <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true">
+                    <path
+                      d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+                  </svg>
+                  <span>Email</span>
+                </a>
+
+                <button type="button" onclick="openResumeModal()" class="social-btn" title="View Resume Summary">
+                  <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true">
+                    <path
+                      d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z" />
+                  </svg>
+                  <span>Resume</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Interactive Contact Form -->
+          <div class="glass-card contact-form">
+            <form id="contactForm" onsubmit="handleFormSubmit(event)">
+              <div class="form-group">
+                <label for="userName">Your Full Name</label>
+                <input type="text" id="userName" class="form-control" placeholder="e.g. Alex Morgan" required>
+              </div>
+
+              <div class="form-group">
+                <label for="userEmail">Your Email Address</label>
+                <input type="email" id="userEmail" class="form-control" placeholder="alex@company.com" required>
+              </div>
+
+              <div class="form-group">
+                <label for="userSubject">Subject / Opportunity</label>
+                <input type="text" id="userSubject" class="form-control"
+                  placeholder="OJT / Internship Inquiry or Project Collaboration" required>
+              </div>
+
+              <div class="form-group">
+                <label for="userMsg">Message</label>
+                <textarea id="userMsg" class="form-control"
+                  placeholder="Tell me about your team, project, or questions..." required></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary" style="width:100%;">
+                <span>Send Message</span>
+                <span>→</span>
+              </button>
+              <div id="formStatusBox" class="form-status-box" style="display:none;"></div>
+            </form>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- ==========================================================================
+       FOOTER
+       ========================================================================== -->
+  <footer>
+    <div class="container footer-inner">
+      <div class="logo" style="font-size:1.1rem;">
+        <div class="logo-badge" title="Jhon Mark Monogram">
+          <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path class="jm-logo-m" d="M19 50 V18 L50 41 L81 18 V48" stroke-width="12" stroke-linecap="square"
+              stroke-linejoin="miter" />
+            <rect class="jm-logo-joint" x="74" y="44" width="14" height="7" rx="1.5" />
+            <path class="jm-logo-j" d="M81 50 V74 C81 81.5 76 86 68 86 H32 C24 86 19 81.5 19 74 V56 H32"
+              stroke-width="12" stroke-linecap="square" stroke-linejoin="miter" />
+          </svg>
+        </div>
+        <span>JHON MARK.</span>
+      </div>
+      <div class="footer-text">
+        © 2026 Jhon Mark T. Ambito • Built with HTML, CSS &amp; JavaScript.
+      </div>
+      <a href="#hero" class="footer-back-to-top">
+        <span>Back to Top</span>
+        <span>↑</span>
+      </a>
+    </div>
+  </footer>
+
+  <!-- ==========================================================================
+       LIVE PLUGIN 2: SPOTIFY "CODING BEATS" FLOATING GLASS PLAYER
+       ========================================================================== -->
+  <div id="spotifyWidget">
+    <!-- Minimized Circle Icon (when collapsed) -->
+    <div class="music-min-icon" onclick="toggleMusicWidget()">
+      🎧
+    </div>
+
+    <!-- Expanded Player Content -->
+    <div class="music-expanded-content">
+      <div class="music-header">
+        <div class="music-tag">
+          <span style="display:inline-block; width:6px; height:6px; background:#10b981; border-radius:50%;"></span>
+          <span>Ambient Focus Synth</span>
+          <div class="equalizer-bars" id="eqBars">
+            <span class="eq-bar"></span>
+            <span class="eq-bar"></span>
+            <span class="eq-bar"></span>
+            <span class="eq-bar"></span>
+          </div>
+        </div>
+        <button class="music-minimize-btn" onclick="toggleMusicWidget()" title="Minimize player">_</button>
+      </div>
+
+      <div class="music-track-info">
+        <div class="music-disc" id="musicDisc">
+          ♫
+        </div>
+        <div class="track-meta">
+          <div class="track-title" id="trackTitle">Ambient Chord 1</div>
+          <div class="track-artist" id="trackArtist">Browser synth</div>
+        </div>
+      </div>
+
+      <div class="music-progress-bar">
+        <div class="music-progress-fill" id="trackProgress"></div>
+      </div>
+
+      <div class="music-controls">
+        <button class="music-btn" onclick="prevTrack()" title="Previous Track">⏮</button>
+        <button class="play-pause-btn" id="playBtn" onclick="togglePlayMusic()" title="Play / Pause">▶</button>
+        <button class="music-btn" onclick="nextTrack()" title="Next Track">⏭</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       AI ASSISTANT (CHATBOT 2.0)
+       ========================================================================== -->
+  <button id="chatToggle" onclick="toggleChat()" aria-label="Open portfolio AI assistant">
+    💬
+    <span class="chat-unread-badge" id="chatBadge">1</span>
+  </button>
+
+  <div id="chatBox">
+    <div id="chatHead">
+      <div class="chat-head-info">
+        <div class="chat-avatar-mini">JM</div>
+        <div class="chat-title-text">
+          <h4>Jhon's Assistant</h4>
+          <div class="chat-status-sub">
+            <span style="display:inline-block; width:6px; height:6px; background:#10b981; border-radius:50%;"></span>
+            Online &amp; Ready
+          </div>
+        </div>
+      </div>
+      <div class="chat-actions">
+        <button class="chat-btn-mini" onclick="clearChat()" title="Clear conversation">🗑️</button>
+        <button class="chat-btn-mini" onclick="toggleChat()" title="Close chat">✕</button>
+      </div>
+    </div>
+
+    <div id="chatMsgs">
+      <div class="msg bot">
+        Hi there! 👋 I am Jhon Mark's AI Portfolio Assistant. Ask me about his projects, skills, certificates, or how to
+        contact him!
+      </div>
+      <div class="typing-indicator" id="typingIndicator">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+
+    <!-- Quick Question Chips -->
+    <div class="prompt-chips">
+      <button class="chip-btn" onclick="askQuickPrompt('Show me top projects')">🚀 Top Projects</button>
+      <button class="chip-btn" onclick="askQuickPrompt('What is your tech stack?')">⚡ Tech Stack</button>
+      <button class="chip-btn" onclick="askQuickPrompt('What have you studied?')">🎓 Journey</button>
+      <button class="chip-btn" onclick="askQuickPrompt('How can I contact or hire you?')">📬 Hire / Contact</button>
+      <button class="chip-btn" onclick="askQuickPrompt('Can I view your resume?')">📄 View Resume</button>
+    </div>
+
+    <div id="chatInputRow">
+      <input id="chatInput" placeholder="Ask about skills, projects, background..."
+        onkeydown="if(event.key==='Enter')sendChat()">
+      <button id="chatSend" onclick="sendChat()" title="Send Message">➤</button>
+    </div>
+  </div>
+
+  <!-- Toast Element -->
+  <div id="toast" role="status" aria-live="polite">
+    <span id="toastIcon">✨</span>
+    <span id="toastMsg">Action completed successfully</span>
+  </div>
+
+  <!-- ==========================================================================
+       SCRIPTS & INTERACTIVITY
+       ========================================================================== -->
+  <script src="js/script.js"></script>
+</body>
+
+</html>
